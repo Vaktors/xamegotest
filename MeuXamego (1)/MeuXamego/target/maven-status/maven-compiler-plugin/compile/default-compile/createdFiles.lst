@@ -1,0 +1,10 @@
+br\com\MeuXamego\model\Empresa.class
+br\com\MeuXamego\model\Usuario.class
+br\com\MeuXamego\model\PessoaFisica.class
+br\com\MeuXamego\repository\RoleRepository.class
+br\com\MeuXamego\MeuXamegoApplication.class
+br\com\MeuXamego\model\Role.class
+br\com\MeuXamego\repository\UsuarioRepository.class
+br\com\MeuXamego\service\UsuarioService.class
+br\com\MeuXamego\controller\UsuarioController.class
+br\com\MeuXamego\Security\SecurityConfig.class
