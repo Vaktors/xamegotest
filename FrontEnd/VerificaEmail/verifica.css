@@ -1,0 +1,336 @@
+/* --- Configurações Globais e Variáveis --- */
+:root {
+    --purple: #4a35a4;
+    --light-purple-bg: #F5F4FA;
+    --dark-text: #1E1E1E;
+    --light-text: #343A40;
+    --border-color: #cac9c9;
+    --white: #FFFFFF;
+    --grey-button-bg: #F0F0F0;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-purple-bg);
+    color: var(--dark-text);
+    height: 100vh;
+    overflow: hidden; 
+}
+
+/* --- Layout Principal --- */
+.page-container {
+    display: flex;
+    height: 100%;
+    width: 100%;
+}
+
+.image-container { 
+    height: 100%;
+    position: relative;
+}
+
+.image-container img {
+    width: auto;
+    height: 100vh;
+    object-fit: cover;
+}
+
+
+/* --- Lado do Formulário --- */
+.form-side {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5rem;
+    overflow-y: auto;
+}
+
+/* --- Cabeçalho (Header) --- */
+#cabecalho {
+    position: fixed;
+    z-index: 999;
+    display: flex;
+    justify-content: space-between; 
+    align-items: center;
+    width: 100%;
+    margin-bottom: 3rem; 
+    gap: 2.5rem;
+    padding: 0 7%;
+    box-sizing: border-box;
+}
+#navbar{
+    width: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: baseline;
+}
+#logo-container{
+    margin: 15px 0px 15px 0px;
+}
+#logo{
+    width: 200px;
+    margin-left: 0px;
+}
+.nav-links {
+    display: flex;
+    gap: 2.5rem;
+    align-items: baseline;
+    margin-right: 2.5rem; 
+}
+
+.nav-links > a, .nav-item-dropdown > a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 500;
+    font-size: 1.05rem;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.arrow-down {
+    border: solid var(--dark-text);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in-out;
+}
+
+
+.nav-item-dropdown {
+    position: relative; 
+    padding-bottom: 0.8rem;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute; 
+    left: 0; 
+    top: 100%; 
+    background-color: var(--white);
+    min-width: 240px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.1);
+    z-index: 1000; 
+    border-radius: 12px;
+    padding: 0.75rem;
+    border: 1px solid #eee;
+}
+
+.dropdown-menu a {
+    color: var(--dark-text);
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+    font-size: 1rem;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.dropdown-menu a .arrow-down {
+    display: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--light-purple-bg);
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-item-dropdown:hover .arrow-down {
+    transform: rotate(225deg);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 2.5rem;
+}
+
+.nav-buttons button {
+    padding: 0.7rem 1.6rem;
+    border-radius: 25px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1.05rem;
+    font-family: 'Poppins', sans-serif;
+}
+
+.btn-help {
+    background-color: var(--purple);
+    color: var(--white);
+    border: none;
+}
+
+.btn-login {
+    background-color: transparent;
+    border: 1px solid black;
+    color: var(--dark-text);
+}
+
+/* --- Conteúdo Principal (Formulário) --- */
+.form-container {
+    max-width: 550px; 
+    width: 100%;
+    margin: auto; 
+    display: flex;
+    flex-direction: column;
+}
+
+.form-container h1 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    text-align: center;
+}
+
+.subtitle {
+    font-size: 1rem;
+    color: var(--light-text);
+    margin-bottom: 2.5rem;
+    text-align: center;
+}
+
+.subtitle strong {
+    color: var(--dark-text);
+    font-weight: 500;
+}
+
+form {
+    width: 100%;
+}
+
+.code-inputs-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 2.5rem;
+}
+
+.code-inputs-container .code-input {
+    width: 60px;
+    height: 60px;
+    text-align: center;
+    font-size: 1.8rem;
+    font-weight: 500;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background-color: var(--white);
+}
+
+.code-inputs-container .code-input:focus {
+    outline: none;
+    border-color: var(--purple);
+    box-shadow: 0 0 0 2px rgba(99, 69, 210, 0.2);
+}
+
+/* --- Botão Principal --- */
+.btn-submit {
+    width: 100%;
+    padding: 0.9rem;
+    background-color: var(--purple);
+    color: var(--white);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+    margin-bottom: 2rem;
+}
+
+.btn-submit:hover {
+    background-color: #5237b3;
+}
+
+.resend-link {
+    text-align: center;
+    color: var(--dark-text);
+    font-size: 0.9rem;
+}
+
+.resend-link a {
+    color: var(--purple);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+@media (max-width: 1450px) and (min-width: 1201px) {
+    
+    
+    .form-side {
+        height: 100%; 
+        padding-top: 2rem; 
+        padding-bottom: 2rem; 
+        
+        padding-left: 3rem; 
+        padding-right: 3rem; 
+    }
+    
+    .subtitle {
+        font-size: 0.95rem; 
+        margin-bottom: 1.8rem; 
+    }
+
+    .code-inputs-container {
+        gap: 1rem; 
+        margin-bottom: 1.8rem; 
+    }
+    
+    .code-inputs-container .code-input {
+        width: 50px; 
+        height: 50px; 
+        font-size: 1.5rem; 
+    }
+
+    .btn-submit {
+        padding: 0.8rem; 
+        font-size: 0.95rem; 
+        margin-bottom: 1rem; 
+    }
+
+    /* AJUSTES NO HEADER (Padrão) */
+    
+    #cabecalho {
+        padding: 0 4%; 
+        gap: 1.5rem; 
+    }
+    
+    .nav-links {
+        gap: 1rem; 
+        margin-right: 1rem;
+    }
+
+    .nav-links > a, .nav-item-dropdown > a {
+        font-size: 1rem; 
+    }
+    
+    .nav-buttons {
+        gap: 1.2rem; 
+    }
+    
+    .nav-buttons button {
+        padding: 0.5rem 1.2rem; 
+        font-size: 0.95rem; 
+    }
+}
+
+
+/* -------------------------------------- */
+/* --- Regras de Responsividade para Telas Pequenas (Max-width: 1200px) --- */
+/* -------------------------------------- */
+
+@media (max-width: 1200px) {
+    .form-side {
+        padding-top: 2rem; 
+        padding-left: 1.5rem; 
+        padding-right: 1.5rem; 
+    }
+}
