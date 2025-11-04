@@ -1,0 +1,585 @@
+:root {
+    --bg: #F5F4FA;
+    --ink: #222;
+    --muted: #6A6A6A;
+    --card: #FFFFFF;
+    --line: #B8B8B8;
+    --purple: #4E35A4;
+    --light-purple-bg: #F2F1F7;
+}
+
+/* ------------------------- RESET ------------------------- */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Manrope", system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* ------------------------- HEADER ------------------------- */
+
+#cabecalho {
+    width: 100%;
+    height: 90px;
+    background-color: var(--bg);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 64px;
+    /* ← MESMA DISTÂNCIA DOS DOIS LADOS */
+    box-sizing: border-box;
+    margin-top: 15px;
+}
+
+/* Logo */
+#logo-container {
+    display: flex;
+    align-items: center;
+}
+
+#logo {
+    width: 200px;
+}
+
+/* Navbar + botões como bloco alinhado à direita */
+
+#navbar,
+.nav-links,
+.nav-buttons {
+    display: flex;
+    align-items: center;
+}
+
+/* Links principais */
+.nav-links {
+    gap: 35px;
+    margin-right: 35px;
+    /* distância entre links e botões */
+}
+
+.nav-links>a,
+.nav-item-dropdown>a {
+    text-decoration: none;
+    color: var(--ink);
+    font-size: 21px;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    padding-bottom: 0.6rem;
+}
+
+/* Setinha dropdown */
+.arrow-down {
+    border: solid currentColor;
+    border-width: 0 2px 2px 0;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: 0.2s ease;
+}
+
+/* Dropdown */
+.nav-item-dropdown {
+    position: relative;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+
+    min-width: 230px;
+    background: var(--bg);
+    border-radius: 30px;
+
+    padding: 12px;
+    border: 1px solid #eee;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+    z-index: 1000;
+}
+
+.dropdown-menu a {
+    display: block;
+    text-decoration: none;
+    color: var(--ink);
+    padding: 0.75rem 1rem;
+    border-radius: 8px;
+    transition: background 0.2s;
+}
+
+.dropdown-menu a:hover {
+    background-color: #EFEAFE;
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-item-dropdown:hover .arrow-down {
+    transform: rotate(225deg);
+}
+
+/* Botões do header */
+.nav-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+/* Roxo principal */
+.btnRoxo {
+    background-color: var(--purple);
+    color: white;
+    border: none;
+    font-size: 21px;
+    padding: 20px 40px;
+    border-radius: 40px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+/* Branco contornado */
+.btnBranco {
+    background-color: transparent;
+    border: 1px solid #000;
+    color: var(--ink);
+    font-size: 21px;
+    padding: 20px 40px;
+    border-radius: 40px;
+    font-weight: 500;
+    cursor: pointer;
+}
+
+.perfil-menu {
+    position: relative;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+#perfilAvatar {
+    width: 68px;
+    height: 68px;
+    border-radius: 50%;
+    object-fit: cover;
+    transition: 0.2s;
+}
+
+#perfilAvatar:hover {
+    filter: brightness(1.15);
+}
+
+/* Dropdown */
+.menu-opcoes {
+    display: none;
+    position: absolute;
+    top: 75px;
+    right: 0;
+
+    background: var(--card);
+    border-radius: 12px;
+    border: 1px solid #DADADA;
+
+    padding: 10px 0;
+    width: 165px;
+
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.15);
+    z-index: 999;
+}
+
+.menu-opcoes button {
+    width: 100%;
+    background: transparent;
+    border: none;
+    text-align: left;
+
+    font-size: 18px;
+    color: var(--ink);
+
+    padding: 12px 16px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.menu-opcoes button:hover {
+    background-color: #EFEAFE;
+}
+
+/* Mostrar dropdown ao clicar */
+.perfil-menu.show .menu-opcoes {
+    display: block;
+}
+
+
+/* ------------------------ WRAP DO PERFIL ------------------------ */
+
+.perfil-wrap {
+    width: calc(100% - 320px);
+    margin: 100px 160px;
+}
+
+.perfil-header {
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    margin-bottom: 50px;
+    padding: 50px;
+}
+
+.perfil-header h2 {
+    font-size: 40px;
+    font-weight: 700;
+    margin: 0 0 8px 0;
+}
+
+.perfil-header .divider {
+    margin: 0 0 12px 0;
+    border: 0;
+    border-top: 1px solid #DDD;
+}
+
+.perfil-header .subtitle {
+    margin: 0;
+    color: #424242;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.35;
+}
+
+.perfil-header .subtitle+.subtitle {
+    margin-top: 4px;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-top: 16px;
+
+}
+
+.user-avatar {
+    width: 121px;
+    height: 121px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.user-name {
+    font-size: 31px;
+    font-style: normal;
+    font-weight: 600;
+    color: var(--purple);
+}
+
+/* ------------------------- SEÇÕES ------------------------- */
+.card-all {
+    border: 1px solid var(--line);
+    border-radius: 30px;
+    padding: 50px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.section-header h2 {
+    margin: 0;
+    font-size: 31px;
+    font-weight: 700;
+}
+
+/* Botões de edição */
+.button-group {
+    display: flex;
+    gap: 8px;
+}
+
+.btn-outline {
+    border: 1px solid #C7C7C7;
+    background: transparent;
+    color: #6B6B6B;
+    border-radius: 86px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-outline:hover {
+    border-color: var(--purple);
+    color: var(--purple);
+}
+
+.btn-primary {
+    background: var(--purple);
+    color: #fff;
+    border: none;
+    border-radius: 6px;
+    padding: 6px 14px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.15);
+}
+
+/* ------------------------- CAMPOS ------------------------- */
+.grid {
+    display: grid;
+    gap: 14px 20px;
+    margin-top: 14px;
+}
+
+.two-cols {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    min-height: 44px;
+}
+
+.field label {
+    font-size: 21px;
+    color: #878787;
+    margin-bottom: 20px;
+}
+
+.value,
+.inline-input {
+    font-size: 21px;
+    line-height: 32px;
+    color: #343A40;
+    height: 32px;
+}
+
+.inline-input {
+    padding: 0 8px;
+    border: 1px solid #DADADA;
+    border-radius: 15px;
+    background: #fff;
+    transition: .2s;
+}
+
+.inline-input:focus {
+    border-color: var(--purple);
+    background: #f8f6ff;
+}
+
+.field.wide {
+    grid-column: 1 / -1;
+}
+
+.subdivider {
+    height: 1px;
+    background: var(--line);
+    margin: 16px 0;
+}
+
+.row-bottom {
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 10px;
+}
+
+#divisoriaCard {
+    margin: 50px 0;
+}
+
+.btn-delete-small {
+    background-color: transparent;
+    color: #FF0004;
+    border: 1px solid #FF0004;
+    padding: 16px 24px;
+    font-size: 21px;
+    border-radius: 10px;
+    font-weight: 400;
+    margin-top: 50px;
+    cursor: pointer;
+}
+
+
+
+/* ===== Modal genérico (Excluir conta) ===== */
+.mx-modal {
+  position: fixed;
+  inset: 0;
+  display: none;                 /* fica invisível até .show */
+  align-items: center;
+  justify-content: center;
+  background: rgba(17, 17, 17, 0.45); /* escurece o fundo */
+  z-index: 2000;
+}
+
+.mx-modal.show {
+  display: flex;
+  animation: mxFadeIn .15s ease;
+}
+
+@keyframes mxFadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+
+.mx-dialog {
+  position: relative;
+  width: min(520px, 92vw);
+  background: var(--card);
+  border: 1px solid #E3E1EC;
+  border-radius: 16px;
+  box-shadow: 0 20px 50px rgba(0,0,0,.18);
+  padding: 22px 22px 18px;
+  transform: translateY(0);
+  animation: mxPop .18s ease;
+}
+
+@keyframes mxPop {
+  from { transform: translateY(6px); opacity: .9; }
+  to   { transform: translateY(0);   opacity: 1; }
+}
+
+.mx-close {
+  position: absolute;
+  right: 10px;
+  top: 8px;
+  border: none;
+  background: transparent;
+  font-size: 22px;
+  line-height: 1;
+  color: #777;
+  cursor: pointer;
+}
+
+.mx-title {
+  margin: 6px 0 6px 0;
+  font-size: 24px;
+  font-weight: 800;
+  color: var(--ink);
+}
+
+.mx-text {
+  margin: 0 0 18px 0;
+  color: var(--muted);
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.mx-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 12px;
+}
+
+/* Botões do modal, seguindo seu padrão visual */
+.mx-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 112px;
+  height: 40px;
+  padding: 0 14px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: filter .15s ease, background-color .15s ease, border-color .15s ease;
+}
+
+.mx-btn:focus { outline: 2px solid rgba(78,53,164,.25); outline-offset: 2px; }
+
+.mx-outline {
+  background: transparent;
+  color: #6B6B6B;
+  border: 1px solid #C7C7C7;
+}
+.mx-outline:hover { border-color: var(--purple); color: var(--purple); }
+
+.mx-danger {
+  background: #C0392B;
+  color: #fff;
+  border: none;
+}
+.mx-danger:hover { filter: brightness(1.05); }
+
+
+/* -=-=-=- Rodapé -=-=-=-*/
+#rodape {
+    display: flex;
+    height: 381px;
+    padding: 10px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    background-color: #EFEFEF;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+#logoRodape {
+    width: 250px;
+    height: auto;
+    object-fit: contain;
+}
+
+
+#footerLinks {
+    display: flex;
+    gap: 30px;
+}
+
+#footerLinks a {
+    text-decoration: none;
+    color: var(--light-text);
+    font-size: 18px;
+    font-weight: 500;
+    transition: color 0.2s;
+}
+
+#footerLinks a:hover {
+    color: var(--purple);
+}
+
+#redeSocial {
+    display: flex;
+    align-items: center;
+    margin: 0;
+}
+
+#redeSocialLink {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+    text-decoration: underline;
+    color: var(--light-text);
+    font-size: 18px;
+    font-weight: 700;
+    transition: color 0.2s;
+}
+
+#redeSocialLink:hover {
+    color: var(--purple);
+}
+
+#iconeInstagram {
+    width: 20px;
+    height: 20px;
+    object-fit: contain;
+}
+
+/* ------------------------- RESPONSIVO ------------------------- */
+@media(max-width: 720px) {
+    .two-cols {
+        grid-template-columns: 1fr;
+    }
+}

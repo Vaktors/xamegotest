@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redefinir senha - Meu Xamêgo</title>
+    <link rel="stylesheet" href="informeEmail.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@200..800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <header id="cabecalho">
+            <figure id="logo-container">
+                <img id="logo" src="img/logo.png" alt="Meu Xamego">
+            </figure>
+            <div id="navbar">
+                <nav class="nav-links">
+                    <div class="nav-item-dropdown">
+                        <a href="#">Adote <span class="arrow-down"></span></a>
+                        <div class="dropdown-menu">
+                            <a href="#">Adotar um pet</a>
+                            <a href="#">Como funciona adoção</a>
+                        </div>
+                    </div>
+                    <div class="nav-item-dropdown">
+                        <a href="#">Sobre o projeto<span class="arrow-down"></span></a>
+                        <div class="dropdown-menu">
+                            <a href="#">Quem somos</a>
+                            <a href="#">Fale conosco</a>
+                            <a href="#">Nossos parceiros</a>
+                        </div>
+                    </div>
+                    <a href="#">Eventos</a>
+                </nav>
+                <div class="nav-buttons">
+                    <button class="btnRoxo" id="ajudar">Quero ajudar</button>
+                    <a href="../login/index.html"><button class="btBranco" id="entrar">Entrar</button></a>
+                </div>
+            </div>
+        </header>
+    <main class="page-container">
+        <div class="image-container">
+            <img src="img/cachorro.png" alt="Cachorro da raça Basenji levantando a pata como se estivesse acenando">
+        </div>
+
+        <div class="form-side">
+            <div class="form-container">
+                <h1>Redefinir senha</h1>
+                <p class="subtitle">
+                    Informe o e-mail cadastrado no Meu Xamêgo <br> para redefinir sua senha.
+                </p>
+
+                <form id="resetRequestForm">
+                    <div class="input-group">
+                        <input type="email" id="resetEmail" placeholder="E-mail" required>
+                    </div>
+
+                    <button type="submit" class="btn-submit">Enviar</button>
+                </form>
+
+            </div>
+    </main>
+
+    <script src="informeEmail.js"></script>
+</body>
+
+</html>

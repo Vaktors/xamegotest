@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Meu perfil - Meu Xamêgo</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./pefil.css" />
+</head>
+
+<body>
+    <header id="cabecalho">
+        <figure id="logo-container">
+            <img id="logo" src="img/logo.png" alt="Meu Xamêgo">
+        </figure>
+
+        <div id="navbar">
+            <nav class="nav-links">
+                <div class="nav-item-dropdown">
+                    <a href="#">Adote <span class="arrow-down"></span></a>
+                    <div class="dropdown-menu">
+                        <a href="#">Adotar um pet</a>
+                        <a href="#">Como funciona adoção</a>
+                    </div>
+                </div>
+
+                <div class="nav-item-dropdown">
+                    <a href="#">Sobre o projeto <span class="arrow-down"></span></a>
+                    <div class="dropdown-menu">
+                        <a href="#">Quem somos</a>
+                        <a href="#">Fale conosco</a>
+                        <a href="#">Nossos parceiros</a>
+                    </div>
+                </div>
+
+                <a href="#">Eventos</a>
+            </nav>
+
+            <div class="nav-buttons">
+                <button class="btnRoxo" id="ajudar">Quero ajudar</button>
+                <div id="perfilDropdown" class="perfil-menu">
+                    <img src="./img/user.png" id="perfilAvatar" alt="Foto de perfil">
+
+                    <div class="menu-opcoes">
+                        <button id="logoutBtn">Sair</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main class="perfil-wrap">
+        <!-- Cabeçalho da página de perfil -->
+        <section class="perfil-header">
+            <h2>Meu perfil</h2>
+            <hr class="divider" />
+            <p class="subtitle">Aqui você pode revisar e atualizar suas informações pessoais.</p>
+            <p class="subtitle">Mantenha seus dados sempre atualizados para facilitar o contato com os protetores.</p>
+
+            <div class="user-info">
+                <img class="user-avatar" src="img/user.png" alt="Foto do usuário">
+                <div class="user-name">Olá, Fellipe Pardo Leveling!</div>
+            </div>
+        </section>
+
+        <!-- CARD com informações e endereço -->
+        <section class="card-all">
+            <!-- Informações pessoais -->
+            <div class="section-header">
+                <h2>Informações pessoais</h2>
+                <div class="button-group" data-section="pessoais">
+                    <button class="btn-outline btn-edit" data-section="pessoais">Editar</button>
+                    <button class="btn-primary btn-confirm" data-section="pessoais" hidden>Confirmar</button>
+                    <button class="btn-outline btn-cancel" data-section="pessoais" hidden>Cancelar</button>
+                </div>
+            </div>
+
+            <div class="grid two-cols" data-grid="pessoais">
+                <div class="field">
+                    <label>Nome completo</label>
+                    <span class="value" data-key="nome">Fellipe Pardo Leveling</span>
+                </div>
+
+                <div class="field">
+                    <label>E-mail</label>
+                    <span class="value" data-key="email" data-locked="true">fellipe@email.com</span>
+                </div>
+
+                <div class="field">
+                    <label>Telefone</label>
+                    <span class="value" data-key="telefone">(61) 8433-3333</span>
+                </div>
+
+                <div class="field">
+                    <label>Gênero</label>
+                    <span class="value" data-key="genero">Masculino</span>
+                </div>
+            </div>
+
+            <div class="subdivider" id="divisoriaCard"></div>
+
+            <!-- Endereço -->
+            <div class="section-header">
+                <h2>Endereço</h2>
+                <div class="button-group" data-section="endereco">
+                    <button class="btn-outline btn-edit" data-section="endereco">Editar</button>
+                    <button class="btn-primary btn-confirm" data-section="endereco" hidden>Confirmar</button>
+                    <button class="btn-outline btn-cancel" data-section="endereco" hidden>Cancelar</button>
+                </div>
+            </div>
+
+            <div class="grid two-cols" data-grid="endereco">
+                <div class="field">
+                    <label>Bairro / Região</label>
+                    <span class="value" data-key="regiao">Asa Sul</span>
+                </div>
+
+                <div class="field">
+                    <label>Estado</label>
+                    <span class="value" data-key="estado">DF</span>
+                </div>
+
+                <div class="field wide">
+                    <label>Complemento (opcional)</label>
+                    <span class="value" data-key="complemento">Próximo ao parque</span>
+                </div>
+            </div>
+
+            <div class="row-bottom">
+                <button class="btn-delete-small" id="openDeleteModal">Deletar conta</button>
+            </div>
+        </section>
+        <div id="modalDelete" class="mx-modal" aria-hidden="true" role="dialog" aria-modal="true">
+            <div class="mx-dialog" role="document">
+                <button class="mx-close" aria-label="Fechar" data-close>&times;</button>
+
+                <h3 class="mx-title">Excluir conta?</h3>
+                <p class="mx-text">
+                    Esta ação é permanente e não poderá ser desfeita. Todos os seus dados serão removidos.
+                    Tem certeza de que deseja continuar?
+                </p>
+
+                <div class="mx-actions">
+                    <button class="mx-btn mx-outline" data-close>Cancelar</button>
+                    <button class="mx-btn mx-danger" id="confirmDeleteBtn">Deletar</button>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer id="rodape">
+        <div id="logoFooter">
+            <img src="img/logo.png" alt="Meu Xamêgo Logo" id="logoRodape">
+        </div>
+
+        <nav id="footerLinks">
+            <a href="#">Contato</a>
+            <a href="#">Parcerias</a>
+            <a href="#">Quem somos</a>
+            <a href="#">Termos de uso</a>
+            <a href="#">Privacidade</a>
+        </nav>
+
+        <a href="#" id="redeSocialLink">
+            <img src="img/iconIg.png" alt="@" id="iconeInstagram">
+            @meuxamego
+        </a>
+
+    </footer>
+
+
+    <script src="perfil.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,294 @@
+:root {
+    --purple: #4a35a4;
+    --light-purple-bg: #F5F4FA;
+    --dark-text: #1E1E1E;
+    --light-text: #343A40;
+    --border-color: #cac9c9;
+    --white: #FFFFFF;
+    --grey-button-bg: #F0F0F0;
+}
+
+*{margin:0;padding:0;box-sizing:border-box;}
+
+body{
+    font-family:'Manrope',sans-serif;
+    background-color:var(--light-purple-bg);
+    color:var(--dark-text);
+    height:100vh;
+    overflow:hidden;
+}
+
+
+button {
+    padding: 17px 35px;
+    border-radius: 100px;
+    cursor: pointer;
+    font-size: 21px;
+
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease;
+}
+
+.page-container {
+    display: flex;
+    height: 100vh; 
+    width: 100%;
+}
+
+.image-container {
+    height: 100%;
+    position: relative;
+}
+
+.image-container img {
+    width: auto;
+    height: 100vh;
+    object-fit: cover;
+}
+
+/* --- Lado do Formulário --- */
+.form-side {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: 2rem 5rem;
+}
+
+/* --- Cabeçalho (Header) --- */
+#cabecalho {
+    top: 0px;
+    left: 0;
+    right: 0;
+    z-index: 999;
+    height: 90px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2.5rem;
+    padding: 0 7%;
+    box-sizing: border-box;
+    font-size: 21px;
+    position: absolute;
+}
+
+#navbar {
+    width: 50%;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+}
+
+#logo-container {
+    margin: 15px 0px 15px 0px;
+}
+
+#logo {
+    width: 206px;
+}
+
+.nav-links {
+    display: flex;
+    gap: 35px;
+    align-items: center;
+    margin-right: 35px;
+}
+
+.nav-links>a {
+    padding-bottom: 0.8rem;
+}
+
+.nav-links>a,
+.nav-item-dropdown>a {
+    text-decoration: none;
+    color: var(--dark-text);
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+}
+
+.arrow-down {
+    border: solid var(--dark-text);
+    border-width: 0 2px 2px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(45deg);
+    transition: transform 0.2s ease-in-out;
+}
+
+
+.nav-item-dropdown {
+    position: relative;
+    padding-bottom: 0.8rem;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    background-color: var(--white);
+    min-width: 240px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    border-radius: 30px;
+    padding: 0.75rem;
+    border: 1px solid #eee;
+}
+
+.dropdown-menu a {
+    color: var(--dark-text);
+    padding: 0.75rem 1rem;
+    text-decoration: none;
+    display: block;
+    border-radius: 8px;
+    transition: background-color 0.2s;
+}
+
+.dropdown-menu a .arrow-down {
+    display: none;
+}
+
+.dropdown-menu a:hover {
+    background-color: var(--light-purple-bg);
+}
+
+.nav-item-dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.nav-item-dropdown:hover .arrow-down {
+    transform: rotate(225deg);
+}
+
+.nav-buttons {
+    display: flex;
+    gap: 35px;
+}
+
+.btnRoxo {
+    background-color: var(--purple);
+    color: var(--white);
+    border: none;
+}
+
+.btnBranco {
+    background-color: transparent;
+    border: 1px solid black;
+    color: var(--dark-text);
+}
+.form-container{
+    max-width:550px;
+    width:100%;
+    margin:0 auto;
+}
+
+.form-container h1{
+    font-size:31px;
+    font-weight:700;
+    margin-bottom:.5rem;
+    text-align:center;
+}
+
+.subtitle{
+    font-size:21px;
+    color:var(--light-text);
+    margin-bottom:2rem;
+    text-align:center;
+}
+
+.input-group input{
+    width:100%;
+    padding:.9rem;
+    border-radius:8px;
+    border:1px solid var(--border-color);
+    margin-bottom:1rem;
+    font-size:1rem;
+    background-color:var(--white);
+}
+
+.btn-submit{
+    width:100%;
+    background-color:var(--purple);
+    color:var(--white);
+    border:none;
+    padding:.9rem;
+    border-radius:25px;
+    cursor:pointer;
+    font-weight:600;
+    font-size:18px;
+    transition:.25s;
+}
+
+.btn-submit:hover{background-color:#5539be;}
+
+
+/* Centraliza verticalmente o conteúdo no lado do form */
+.form-side {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.password-wrapper {
+    position: relative;
+}
+
+.password-wrapper input {
+    width: 100%;
+    padding: .9rem;
+    padding-right: 48px; /* espaço para o botão */
+    border-radius: 8px;
+    border: 1px solid var(--border-color);
+    background: var(--white);
+    font-size: 1rem;
+}
+
+/* Ícone mostrar senha */
+.toggle-pass {
+    position: absolute;
+    right: 14px;
+    top: 37%;
+    transform: translateY(-50%);
+    width: 22px;
+    height: 22px;
+    opacity: .6;
+    cursor: pointer;
+    user-select: none;
+}
+
+.toggle-pass:hover {
+    opacity: 1;
+}
+
+
+/* Remove borda/outline ao clicar no ícone */
+.toggle-pass:focus,
+.toggle-pass:active {
+    outline: none !important;
+    border: none !important;
+}
+
+.input-group input {
+    height: 48px;              /* altura consistente */
+    line-height: 48px;         /* centraliza o texto verticalmente */
+    padding-right: 45px;       /* cria espaço interno para o ícone */
+}
+
+input:focus,
+.toggle-pass:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+
+input::-ms-reveal,
+input::-ms-clear {
+    display: none !important;
+}
+
+input[type="password"]::-webkit-textfield-decoration-container,
+input[type="password"]::-webkit-credentials-auto-fill-button,
+input[type="password"]::-webkit-clear-button,
+input[type="password"]::-webkit-reveal-button {
+    display: none !important;
+}
